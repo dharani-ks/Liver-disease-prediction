@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Disease Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 70%; /* Increased width */
+            max-width: 1000px; /* Increased max-width */
+            padding: 60px; /* Increased padding */
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 3rem; /* Increased font size for result */
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 2rem ;
+            text-align: left;
+        }
+        strong{
+           color:#2980b9;
+        }
+
+        /* Green color for no liver disease */
+        .result-green {
+            color: #27ae60;
+        }
+
+        /* Red color for liver disease */
+        .result-red {
+            color: #e74c3c;
+        }
+
+        .info {
+            font-size: 1.6rem; /* Increased font size for info */
+            margin-top: 25px;
+            color: #2980b9;
+        }
+
+        .accuracy {
+            font-size: 1.4rem; /* Increased font size for accuracy */
+            font-style: italic;
+            margin-top: 30px;
+            color: #e67e22;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 50px; /* Increased margin */
+            padding: 14px 35px; /* Increased padding */
+            background-color: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.4rem; /* Increased font size */
+            transition: background-color 0.3s;
+        }
+
+        .back-link:hover {
+            background-color: #2ecc71;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 35px; /* Adjust padding for smaller screens */
+            }
+
+            h1 {
+                font-size: 2.5rem; /* Adjust font size for smaller screens */
+            }
+
+            .info {
+                font-size: 1.3rem;
+            }
+
+            .accuracy {
+                font-size: 1.2rem;
+            }
+
+            .back-link {
+                font-size: 1.3rem; /* Adjust font size for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Result text color dynamically based on liver disease status -->
+    <h1>{{ result }}</h1>
+    <p><strong>Disease Type:</strong> {{ disease_type }}</p>
+    <p><strong>Causes:</strong> {{causes}}</p>
+    <p><strong>Advice:</strong> {{ advice }}</p>
+    <p><strong>Model Accuracy:</strong> {{ accuracy }}</p>
+    
+    <a href="/" class="back-link">Go Back</a>
+</div>
+
+</body>
+</html>
